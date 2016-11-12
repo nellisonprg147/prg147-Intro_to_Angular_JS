@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PRG 147 Intro to Anglar JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body class="body">
+<div class="container">
+    <div class="header">
+        <div class="title">Intro to Angular JS</div>
+    </div>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1> Lawn Mowing Cost Calculator</h1>
+        <p>Please enter your yard measurements in feet in the appropriate fields.</p>
+
+        <!-- this code is for the front yard -->
+        <p>Front Yard Length <input type="text" ng-model="frontYardLength"</p>
+        <p>Front Yard Width <input type="text" ng-model="frontYardWidth"</p>
+
+        <p>&nbsp;</p>
+        <!-- this code is for the back yard-->
+        <p>Back Yard Length <input type="text" ng-model="backYardLength"</p>
+        <p>Back Yard Width <input type="text" ng-model="backYardWidth"</p>
+        <p>&nbsp;</p>
+        <!-- this code is for the left side yard -->
+        <p>Left Side Yard Length <input type="text" ng-model="leftSideYardLength"</p>
+        <p>Left Side Yard Width <input type="text" ng-model="leftSideYardWidth"</p>
+        <p>&nbsp;</p>
+        <!-- this code is for the right side yard -->
+        <p>Right Side Yard Length <input type="text" ng-model="rightSideYardLength"</p>
+        <p>Right Side Yard Width <input type="text" ng-model="rightSideYardWidth"</p>
+
+        <!-- estimate output -->
+        <p>Cost to mow your lawn will be: {{ (((frontYardLength *  frontYardWidth)* .1)+ ((backYardLength * backYardWidth)
+            * .1) +((leftSideYardLength * leftSideYardWidth)* .1) + ((rightSideYardLength * rightSideYardWidth) * .1))
+            | currency}}</p>
+    </div>
+
+    <div class="footer">
+
+        <p><a href="http://nellison.mccdgm.net/index.html">Assignment Index</a></p>
+    </div>
+
+
+
+</div>
+
+<script src="myApp.js"></script>
+<script src="myCtrl.js"></script>
+</body>
+
+</html>
